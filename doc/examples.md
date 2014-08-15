@@ -118,6 +118,8 @@ function doStuff(name) {
     if(name === null || typeof name === 'undefined'){
         ip = '127.0.0.1';
     }
+    console.log('hello '+name);
+}
 
 ```
 
