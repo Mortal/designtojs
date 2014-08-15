@@ -5,7 +5,7 @@ Design.js
 An extension of JavaScript that makes designing objects and classes easier
 as well as providing a neat way to deal with callback hell.
 
-Example: An Class Returning and formatting the current Date (with callbacks)
+Example: A class returning and formatting the current date (with callbacks ;^))
 
 ```
 MyDate: (pre: 'Time') {
