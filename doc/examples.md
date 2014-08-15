@@ -132,7 +132,7 @@ lookupName: (ip: '127.0.0.1', callback) {
 
 It's worth looking at the result of this:
 
-```
+```js
 function lookupName(ip, callback) {
     if(ip === null || typeof ip === 'undefined'){
         ip = '127.0.0.1';
