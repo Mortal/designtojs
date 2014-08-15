@@ -19,8 +19,6 @@ MyDate.currentTime: (add: 0, callback) {
 
 //Using a question mark behind and argument will make that argument optional
 MyDate.formatTime: (add?, callback) {
-    //The exclamation mark behind error indicates that if an error is given, 
-    //'callback' should be called with it instead of continuing the execution of the code
     this.currentTime(add) -> (error! callback, timestamp)
     callback(null, this.pre + ': The current UNIX Time is ' + timestamp + ' but ' + add + ' was added to it');
 };
