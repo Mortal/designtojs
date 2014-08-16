@@ -11,12 +11,16 @@ MyDate.prototype.formatTime = function(add, callback) {if(callback===null||callb
     callback(null, this.pre + ': ' + timestamp);
 }.bind(this))  };
 
+MyDate.staticMethod = function(doSomething){
+    //I should probably do something
+};
+
 var date = new MyDate('Callbacks');
 
 date.currentTime(0, function(error, time) {
     console.log(time);
-}.bind(this))  
+}.bind(this))  ;
 
 date.formatTime(function(error, text) {
     console.log(text);
-}.bind(this))  
+}.bind(this))  ;
