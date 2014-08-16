@@ -6,6 +6,10 @@ A small but powerful extension of JS with a compiler written in JS.
 All vanilla JS is also valid in DesignToJS, but DesignToJS provides some additional
 syntactic sugar.
 
+DesignToJS is for you if you love JavaScript, think CoffeeScript is a much too drastic change of the language, but you want to stop repeating youself, especially in asynchronous environments.
+
+DesignToJS addresses pain points such as: default arguments, error handling, callback hell, and optional arguments.
+
 Example:
 
 ```js
