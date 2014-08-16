@@ -7,7 +7,7 @@ as well as providing a neat way to deal with callback hell.
 
 Example: A class returning and formatting the current date (with callbacks ;^))
 
-```
+```js
 MyDate: (pre: 'Time') {
     this.pre = pre;
     console.log('Time object created, using prefix ' + this.pre);
@@ -76,7 +76,7 @@ date.currentTime(null, function(error, time){
 
 (Other) ways to use callbacks:
 
-```
+```js
 date.currentTime(0) -> (error!, time) {
     console.log(time);
 }
@@ -102,7 +102,7 @@ date.formatTime(10, function(error, text){
 Defining ordinary functions: 
 
 
-```
+```js
 doStuff: (name: 'Thomas') {
     console.log('hello '+name);
 }
@@ -122,7 +122,7 @@ function doStuff(name) {
 ```
 
 Multiple callbacks and passing on arguments:
-```
+```js
 lookupName: (ip: '127.0.0.1', callback) {
     db.getUserID(ip) -> (error! callback, user_id)
     db.getUserName(user_id) -> callback
