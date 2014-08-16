@@ -10,6 +10,7 @@ Example:
 
 sayHello: (name: 'Tim', age?, city) {
     console.log('Hello to ' + city + ', ' + name);
+    
     if(age){
         console.log('It\'s nice to be '+age+' years old');
     } else {
@@ -31,6 +32,7 @@ function sayHello(name, age, city) {
         name = 'Tim';
     }
     console.log('Hello to ' + city + ', ' + name);
+    
     if(age){
         console.log('It\'s nice to be '+age+' years old');
     } else {
@@ -39,7 +41,7 @@ function sayHello(name, age, city) {
 }
 
 ```
-*The code has been beautified. DesignToJS will fit everything into one live by default, leaving all your line-numbers intact! No sourcemap necesssary.* 
+*The code has been beautified. DesignToJS will fit everything into one line by default, leaving all your line-numbers intact! No sourcemap necesssary.* 
 
 The example above shows DesignToJS function syntax as well as some useful argument handling,
 but it's far from being everything that can be done with it.
