@@ -1,4 +1,3 @@
-
 MyDate: (pre: 'Time') {
     this.pre = pre;
 };

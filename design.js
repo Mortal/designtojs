@@ -2,10 +2,42 @@
 var compile = require('./lib/compile.js');
 var fs = require('fs');
 
-compile.compileFile(process.argv[2], function(error, output){
-    if(!process.argv[3]){
-        process.stdout.write(output); 
-    } else {
-        fs.writeFileSync(process.argv[3], output); 
+var input = process.argv.slice(2);
+
+var outI = input.indexOf('-o');
+var outFolder;
+
+if(outI !== -1){
+    outFolder = input[outI+1];
+    input.splice(outI, 2);
+}
+
+var pairs = [];
+for(var i=0; i<input.length; i++){
+    var file = input[i];
+    var basename = file.slice(0, file.lastIndexOf('.'));
+    if(outFolder){
+        var output = outFolder+'/'+basename+'.js';
+        var dir = output.slice(0, output.lastIndexOf('/'));
     }
-});
+    pairs.push({
+        input: file,
+        output: output,
+        dir: dir
+    });
+}
+
+for(var i=0; i<pairs.length; i++){
+    var pair = pairs[i];
+
+    var content = fs.readFileSync(pair.input);
+    var compiled = compile.compileString(content);
+    if(pair.output){
+        try {
+            fs.mkdirSync(pair.dir);
+        } catch (e){}
+        fs.writeFileSync(pair.output, compiled);
+    } else {
+        process.stdout.write(compiled); 
+    }
+}

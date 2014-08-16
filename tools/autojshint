@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# this can be used instead of the jshint binary to provide linting in VIM
+
+# let g:syntastic_javascript_checkers = ['jshint']
+# let g:syntastic_javascript_jshint_args = "-c ~/.jshintrc"
+# let g:syntastic_jshint_exec = 'autojshint'
+
+node design.js "$3" | jshint "$1" "$2" - | (
+    while read line; do
+        echo ${3}:${line##*:}        
+    done;
+)
+
