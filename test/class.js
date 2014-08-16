@@ -1,4 +1,3 @@
-
 function MyDate(pre) {if(pre===null||typeof pre==='undefined'){pre= 'Time'}
     this.pre = pre;
 };
