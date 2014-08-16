@@ -5,8 +5,8 @@
 Albert: (){return (){return (){}}}
 
 var test = 3
-Albert.nano: test ? (what){
-
+Albert.nano: test ? (what?, add:3, herp!){
+    console.log()
 } : (toplel) {
 
 }
