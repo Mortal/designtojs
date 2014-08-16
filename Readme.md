@@ -28,15 +28,15 @@ sayHello: (name: 'Tim', age?, city) {
 
 ```
 
-This compiled to the following JavaScript:
+The example above compiles to the following JavaScript code:
 
 ```
 function sayHello(name, age, city) {
-    if(city === null || typeof city === 'undefined'){
+    if(city === null || city === undefined){
         city = age;
         age = undefined;
     }
-    if(name === null || typeof name === 'undefined'){
+    if(name === null || name === undefined){
         name = 'Tim';
     }
     console.log('Hello to ' + city + ', ' + name);
@@ -69,7 +69,7 @@ This results in the following code:
 ```
 function printFile(path){
     fs.readFile(path, function(error, contents){
-        if(error !== null && typeof error !== 'undefined') return;
+        if(error !== null && error !== undefined) return;
         console.log(contents);
     });
 }
@@ -95,7 +95,7 @@ Which gives us the following code:
 ```
 function printFile(path, callback){
     fs.readFile(path, function(error, contents){
-        if(error !== null && typeof error !== 'undefined') return callback(error);
+        if(error !== null && error !== undefined) return callback(error);
         console.log(contents);
         callback();
     }.bind(this));
@@ -124,14 +124,14 @@ And this gives us:
 
 ```
 function Car(color){
-    if(color === null || typeof color === 'undefined'){
+    if(color === null || color !== undefined){
         color = red;
     }
     this.color = color;
 }
 
 Car.prototype.drive = function(what){
-    if(color === null || typeof color === 'undefined'){
+    if(color === null || color === undefined){
         color = red;
     }
     console.log('A car of '+ this.color +' is driving along the'+ what )

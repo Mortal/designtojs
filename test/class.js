@@ -1,13 +1,13 @@
-function MyDate(pre) {if(pre===null||typeof pre==='undefined'){pre= 'Time'}
+function MyDate(pre) {if(pre===null||pre===undefined){pre= 'Time'}
     this.pre = pre;
 };
 
-MyDate.prototype.currentTime = function(add, callback) {if(add===null||typeof add==='undefined'){add= 0}
+MyDate.prototype.currentTime = function(add, callback) {if(add===null||add===undefined){add= 0}
     callback(null, Date.now() + add);
 };
 
-MyDate.prototype.formatTime = function(add, callback) {if(callback===null||typeof callback==='undefined'){callback=add;add=undefined;}
-    this.currentTime(add, function(error, timestamp){if(error!==null&&typeof error!=='undefined'){return callback(error)}
+MyDate.prototype.formatTime = function(add, callback) {if(callback===null||callback===undefined){callback=add;add=undefined;}
+    this.currentTime(add, function(error, timestamp){if(error!==null&&error!==undefined){return callback(error)}
     callback(null, this.pre + ': ' + timestamp);
 }.bind(this))  };
 

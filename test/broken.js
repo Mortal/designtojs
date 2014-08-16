@@ -13,7 +13,7 @@ function optionalArguments(first, second?, third) {
 
 // Correct:
 // Handle additional arguments yourself
-function optionalArguments(first, second, third) {if(third===null||typeof third==='undefined'){third=second;second=first;first=undefined;}
+function optionalArguments(first, second, third) {if(third===null||third===undefined){third=second;second=first;first=undefined;}
     if(third === null || typeof third === 'undefined'){
         third = second;
         second = undefined;

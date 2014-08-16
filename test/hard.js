@@ -2,16 +2,16 @@
 
 // Some complicated test cases
 
-function Albert(add){if(add===null||typeof add==='undefined'){add=2 + Math.add(2,3)/*add the numbers*/}this.add = add}
+function Albert(add){if(add===null||add===undefined){add=2 + Math.add(2,3)/*add the numbers*/}this.add = add}
 
 var test = 3
-Albert.nano: test ? function(what, , ){if(herp===null||typeof herp==='undefined'){herp=add;add=what;what=undefined;}if(add===null||typeof add==='undefined'){add=3}if(herp!==null&&typeof herp!=='undefined'){return herp}
+Albert.nano: test ? function(what, , ){if(herp===null||herp===undefined){herp=add;add=what;what=undefined;}if(add===null||add===undefined){add=3}if(herp!==null&&herp!==undefined){return herp}
     console.log(this.add + add)
 } : function(toplel) {
     return;
 }
 
-Albert.prototype.nano2 = function(what, add, herp){if(herp===null||typeof herp==='undefined'){herp=add;add=undefined;}
+Albert.prototype.nano2 = function(what, add, herp){if(herp===null||herp===undefined){herp=add;add=undefined;}
     console.log(what, add, herp);
 }
 
