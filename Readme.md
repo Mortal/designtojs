@@ -12,7 +12,8 @@ DesignToJS addresses pain points such as:
   - callback hell
   - creating classes.
 
-Example:
+Examples:
+--------
 
 ```js
 sayHello: (name: 'Tim', age?, city) {
