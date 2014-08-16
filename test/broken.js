@@ -22,9 +22,9 @@ function optionalArguments(first, second, third) {if(third===null||third===undef
 
 // Ambigous:
 // There would be two ways to produce correct JS code from this statement
-asyncFunction(arg1, arg2, decide)   ? fn1 : fn2
+asyncFunction(arg1, arg2, decide);   ? fn1 : fn2
 
 // Correct:
 // Make yourself clear
-asyncFunction(arg1, arg2, (decide ? fn1 : fn2))  
+asyncFunction(arg1, arg2, (decide ? fn1 : fn2));  
 
