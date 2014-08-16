@@ -2,11 +2,23 @@
 
 // Some complicated test cases
 
-Albert: (){return (){return (){}}}
+Albert: (add:5){this.add = add}
 
 var test = 3
 Albert.nano: test ? (what?, add:3, herp!){
-    console.log()
+    console.log(this.add + add)
 } : (toplel) {
-
+    return;
 }
+
+Albert.nano2: (what, add?, herp){
+    console.log(what, add, herp);
+}
+
+var ulb = new Albert();
+
+ulb.nano(5);
+ulb.nano(5, 5); //Shouldn't be printed
+ulb.nano(5, 5, 5); //Should be printed either
+
+ulb.nano2(5, 5); //Should print 5, undefined, 5
