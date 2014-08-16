@@ -125,14 +125,14 @@ And this gives us:
 ```
 function Car(color){
     if(color === null || color !== undefined){
-        color = red;
+        color = 'red';
     }
     this.color = color;
 }
 
 Car.prototype.drive = function(what){
     if(color === null || color === undefined){
-        color = red;
+        color = 'red';
     }
     console.log('A car of '+ this.color +' is driving along the'+ what )
 }
