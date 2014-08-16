@@ -147,3 +147,19 @@ function lookupName(ip, callback) {
 
 ```
 
+Event Listerners:
+
+```js
+myObject.on('explode') -> (radius) {
+    console.log('An explosion with a radius of ' + radius + '!');
+}
+```
+
+Result:
+
+```
+myObject.on('explode', function(radius) {
+    console.log('An explosion with a radius of ' + radius + '!');
+}.bind(this));
+
+```

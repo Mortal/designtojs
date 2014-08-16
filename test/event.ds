@@ -1,0 +1,20 @@
+
+//Overrides 'this':
+
+myObject.on('explode') -> (radius) {
+    console.log('An explosion with a radius of ' + radius + '!');
+}
+
+//Doesn't override 'this':
+
+explosionListener: (radius) {
+    console.log('An explosion with a radius of ' + radius + '!');
+}
+
+myObject.on('explode') -> explosionListener
+
+//Also doesn't override 'this':
+
+myObject.on('explode') -> (function(radius) {
+    console.log('An explosion with a radius of ' + radius + '!');
+})
