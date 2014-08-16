@@ -60,7 +60,7 @@ MyDate.prototype.formatTime = function(add, callback){
     this.currentTime(add, function(error, timestamp){
         if(error !== null && typeof error !== 'undefined') return callback(error);
         callback(this.pre + ': The current UNIX Time is ' + timestamp + ' but ' + add + ' was added to it');
-    });
+    }.bind(this));
 };
 
 var date = new MyDate('Test');
@@ -69,8 +69,8 @@ date.currentTime(null, function(error, time){
     console.log(time);
     date.formatTime(10, function(error, text){
         console.log(text);
-    });
-});
+    }.bind(this));
+}.bind(this));
 
 ```
 
@@ -92,11 +92,11 @@ Result:
 date.currentTime(0, function(error, time){
     if(error !== null && typeof error !== 'undefined') return;
     console.log(time);
-});
+}.bind(this));
 
 date.formatTime(10, function(error, text){
     console.log(text);    
-});
+}.bind(this));
 ```
 
 Defining ordinary functions: 
@@ -142,7 +142,7 @@ function lookupName(ip, callback) {
             return callback(error);
         }
         db.getUserName(user_id, callback);
-    })
+    }.bind(this))
 }
 
 ```
