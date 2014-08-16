@@ -1,8 +1,10 @@
 
-DesignToJs
+DesignToJS
 ==========
 
 A small but powerful extension of JS with a compiler written in JS.
+All vanilla JS is also valid in DesignToJS, but DesignTOJS provides some additional
+syntactic sugar.
 
 Example:
 
