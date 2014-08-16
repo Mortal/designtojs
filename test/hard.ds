@@ -1,0 +1,12 @@
+
+
+// Some complicated test cases
+
+Albert: (){return (){return (){}}}
+
+var test = 3
+Albert.nano: test ? (what){
+
+} : (toplel) {
+
+}
