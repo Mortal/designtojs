@@ -238,4 +238,4 @@ Tools
 
 The tools folder contains some help with integrating DesignToJs with your everyday tools.
 
-DesignToJs should work fine with most common JavaScript Syntax highliters.
+DesignToJs should work fine with most common JavaScript Syntax highlighters.
