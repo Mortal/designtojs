@@ -23,7 +23,7 @@ MyDate.formatTime: (add?, callback) {
     callback(null, this.pre + ': ' + timestamp);
 };
 
-var date = new MyDate('Callbacks');
+var date = new MyDate('Test');
 
 date.currentTime(0) -> (error, time)
 console.log(time);
