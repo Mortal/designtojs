@@ -23,11 +23,11 @@ This compiled to the following JavaScript:
 
 ```
 function sayHello(name, age, city) {
-    if(city === 'null' || typeof city === 'undefined'){
+    if(city === null || typeof city === 'undefined'){
         city = age;
         age = undefined;
     }
-    if(name === 'null' || typeof name === 'undefined'){
+    if(name === null || typeof name === 'undefined'){
         name = 'Tim';
     }
     console.log('Hello to ' + city + ', ' + name);
