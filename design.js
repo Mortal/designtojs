@@ -1,8 +1,15 @@
+#!/usr/bin/node
 
 var compile = require('./lib/compile.js');
 var fs = require('fs');
 
 var input = process.argv.slice(2);
+
+if(input.indexOf('-h') !== -1 || input.indexOf('--help') !== -1){
+    console.log("Usage: designtojs [inputfile, ...] [-o outputfolder]");
+    console.log("Prints to stdout by default");
+    return;
+}
 
 var outI = input.indexOf('-o');
 var outFolder;
