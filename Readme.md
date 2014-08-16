@@ -72,7 +72,7 @@ or even pass the error to a callback. Let's look at some more advanced example:
 
 ```js
 printFile: (path, callback) {
-    fs.readFile(path) -> (error!callback, contents) {
+    fs.readFile(path) -> (error! callback, contents) {
         console.log(contents);
         callback();
     }
@@ -130,12 +130,101 @@ Car.prototype.drive = function(what){
 ```
 
 Documentation
--------------
+=============
 
+Functions
+---------
 
+A function is created with the following syntax:
+
+```
+[Name:] ([arg1, arg2, ...]) {
+
+}
+```
+*Name*: The name to use for the function. Omitting it will create an anonymous function.
+*Brackets*: The '{' and '}' brackets around the function body are optional when using 
+the callback syntax (See next). When omitting them, the entire remaining body of the current
+context will be used.
+
+Callbacks
+---------
+
+The '->' callback operator appends the right-side argument as last the last argument to the left-side function call.
+
+```
+asyncFunction([arg1, arg2, ...]) -> variable | function
+```
+
+Example using an anonymous function:
+
+```
+asyncFunction(arg1, arg2) -> (error, arg1, arg2) {
+}
+```
+
+Example using a variable
+```
+asyncFunction(arg1, arg2) -> callback
+```
+
+### Binding:
+
+If the right-side argument is an anonymous function, it will be bound to the current 'this'
+contect *unless* it is wrapped in brackets, example:
+
+```
+//Not bound:
+asyncFunction(arg1, arg2) -> ((error, arg1, arg2) {
+
+})
+```
+
+Function Arguments
+------------------
+
+DesignToJS adds some useful operators that can be used on function arguments.
+
+### 'Default' Operator: 
+
+Allows you to define a default value for an argument.
+
+Syntax:
+```
+arg: [default]
+```
+*default*: If arg is either undefined or null, it will be set to the value given as 'default'
+
+### 'Should not' Operator: 
+
+If the argument is not null or undefined, the function will return immediatly and call the given callback function with the argument.
+
+Syntax:
+```
+arg! [callback]
+```
+*callback*: If given, this function will be called with the value of the argument.
+
+### 'Optional' Operator:
+
+Makes the marked element optional. A function can only have one optional operator.
+If the rightmost function argument is undefined or null, all other function arguments will be shifted so only the optional argument remains undefined.
+
+Syntax:
+```
+arg?
+```
+
+Example:
+
+```
+example(arg1, arg2?, arg3, arg4){
+}
+```
+If arg4 would be empty, arg4 would be set to arg3, arg3 to arg2 and arg2 to undefined.
 
 Tools
------
+=====
 
 The tools folder contains some help with integrating DesignToJs with your everyday tools.
 
