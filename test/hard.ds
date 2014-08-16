@@ -19,6 +19,6 @@ var ulb = new Albert();
 
 ulb.nano(5);
 ulb.nano(5, 5); //Shouldn't be printed
-ulb.nano(5, 5, 5); //Should be printed either
+ulb.nano(5, 5, 5); //Shouldn't be printed either
 
 ulb.nano2(5, 5); //Should print 5, undefined, 5
