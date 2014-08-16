@@ -19,8 +19,8 @@ MyDate.currentTime: (add: 0, callback) {
 
 //Using a question mark behind and argument will make that argument optional
 MyDate.formatTime: (add?, callback) {
-    this.currentTime(add) -> (error! callback, timestamp)
-    callback(null, this.pre + ': The current UNIX Time is ' + timestamp + ' but ' + add + ' was added to it');
+    this.currentTime(add) -> (error!callback, timestamp)
+    callback(null, this.pre + ': ' + timestamp);
 };
 
 var date = new MyDate('Callbacks');
@@ -32,7 +32,7 @@ date.formatTime(10) -> (error, text)
 console.log(text);
 ```
 
-This example translates to the following JavaScript: 
+This example translates to the following JavaScript (beautified):
 
 ```js
 
@@ -65,9 +65,9 @@ MyDate.prototype.formatTime = function(add, callback){
 
 var date = new MyDate('Test');
 
-date.currentTime(null, function(time){
+date.currentTime(null, function(error, time){
     console.log(time);
-    date.formatTime(10, function(text){
+    date.formatTime(10, function(error, text){
         console.log(text);
     });
 });
