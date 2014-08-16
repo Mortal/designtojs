@@ -143,6 +143,7 @@ A function is created with the following syntax:
 }
 ```
 *Name*: The name to use for the function. Omitting it will create an anonymous function.
+
 *Brackets*: The '{' and '}' brackets around the function body are optional when using 
 the callback syntax (See next). When omitting them, the entire remaining body of the current
 context will be used.
