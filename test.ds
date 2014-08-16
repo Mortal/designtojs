@@ -1,0 +1,22 @@
+MyDate: (pre: 'Time') {
+    this.pre = pre;
+    console.log('Time object created, using prefix ' + this.pre);
+};
+
+MyDate.currentTime: (add: 0, callback) {
+    callback(null, Date.now() + add);
+};
+
+//Using a question mark behind and argument will make that argument optional
+MyDate.formatTime: (add?, callback) {
+    this.currentTime(add) -> (error! callback, timestamp)
+    callback(null, this.pre + ': The current UNIX Time is ' + timestamp + ' but ' + add + ' was added to it');
+};
+
+var date = new MyDate('Callbacks');
+
+date.currentTime(0) -> (time)
+console.log(time);
+
+date.formatTime(10) -> (text)
+console.log(text);

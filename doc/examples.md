@@ -25,10 +25,10 @@ MyDate.formatTime: (add?, callback) {
 
 var date = new MyDate('Callbacks');
 
-date.currentTime(0) -> (time)
+date.currentTime(0) -> (error, time)
 console.log(time);
 
-date.formatTime(10) -> (text)
+date.formatTime(10) -> (error, text)
 console.log(text);
 ```
 
