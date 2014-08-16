@@ -172,7 +172,7 @@ asyncFunction(arg1, arg2) -> callback
 ### Binding:
 
 If the right-side argument is an anonymous function, it will be bound to the current 'this'
-contect *unless* it is wrapped in brackets, example:
+context *unless* it is wrapped in brackets, example:
 
 ```
 //Not bound:
@@ -198,7 +198,7 @@ arg: [default]
 
 ### 'Should not' Operator: 
 
-If the argument is not null or undefined, the function will return immediatly and call the given callback function with the argument.
+If the argument is not null or undefined, the function will return immediately and call the given callback function with the argument.
 
 Syntax:
 ```
