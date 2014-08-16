@@ -2,7 +2,7 @@
 
 // Some complicated test cases
 
-Albert: (add:5){this.add = add}
+Albert: (add:2 + Math.add(2,3)/*add the numbers*/){this.add = add}
 
 var test = 3
 Albert.nano: test ? (what?, add:3, herp!){
