@@ -6,8 +6,7 @@ A small but powerful extension of JS with a compiler written in JS.
 
 Example:
 
-```
-
+```js
 sayHello: (name: 'Tim', age?, city) {
     console.log('Hello to ' + city + ', ' + name);
     
@@ -48,7 +47,7 @@ but it's far from being everything that can be done with it.
 
 Have a look at this function, which reads and prints an imaginary file in node.js:
 
-```
+```js
 printFile: (path) {
     fs.readFile(path) -> (error!, contents)
     console.log(contents);
@@ -71,7 +70,7 @@ Isn't that a nice way to do concurrency?
 Of course sometimes you don't want to wrap the entire remaining function in a callback,
 or even pass the error to a callback. Let's look at some more advanced example:
 
-```
+```js
 printFile: (path, callback) {
     fs.readFile(path) -> (error!callback, contents) {
         console.log(contents);
@@ -102,7 +101,7 @@ passing a variable, or anything but a simple function.
 
 DesignToJs can create JavaScript classes too:
 
-```
+```js
 Car: (color: 'red'){
     this.color = color;
 }
