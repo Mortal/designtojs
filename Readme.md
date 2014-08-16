@@ -6,7 +6,7 @@ A small but powerful extension of JS with a compiler written in JS.
 
 Example:
 
-```js
+```
 
 sayHello: (name: 'Tim', age?, city) {
     console.log('Hello to ' + city + ', ' + name);
@@ -22,7 +22,7 @@ sayHello: (name: 'Tim', age?, city) {
 
 This compiled to the following JavaScript:
 
-```js
+```
 function sayHello(name, age, city) {
     if(city === 'null' || typeof city === 'undefined'){
         city = age;
@@ -48,7 +48,7 @@ but it's far from being everything that can be done with it.
 
 Have a look at this function, which reads and prints an imaginary file in node.js:
 
-```js
+```
 printFile: (path) {
     fs.readFile(path) -> (error!, contents)
     console.log(contents);
@@ -58,7 +58,7 @@ printFile: (path) {
 
 This results in the following code:
 
-```js
+```
 function printFile(path){
     fs.readFile(path, function(error, contents){
         if(error !== null && typeof error !== 'undefined') return;
@@ -71,7 +71,7 @@ Isn't that a nice way to do concurrency?
 Of course sometimes you don't want to wrap the entire remaining function in a callback,
 or even pass the error to a callback. Let's look at some more advanced example:
 
-```js
+```
 printFile: (path, callback) {
     fs.readFile(path) -> (error!callback, contents) {
         console.log(contents);
@@ -84,7 +84,7 @@ printFile: (path, callback) {
 
 Which gives us the following code:
 
-```js
+```
 function printFile(path, callback){
     fs.readFile(path, function(error, contents){
         if(error !== null && typeof error !== 'undefined') return callback(error);
@@ -102,7 +102,7 @@ passing a variable, or anything but a simple function.
 
 DesignToJs can create JavaScript classes too:
 
-```js
+```
 Car: (color: 'red'){
     this.color = color;
 }
@@ -114,7 +114,7 @@ Car.drive: (what: 'highway'){
 
 And this gives us:
 
-```js
+```
 function Car(color){
     if(color === null || typeof color === 'undefined'){
         color = red;
@@ -139,3 +139,5 @@ Tools
 -----
 
 The tools folder contains some help with integrating DesignToJs with your everyday tools.
+
+DesignToJs should work fine with most common JavaScript Syntax highliters.
